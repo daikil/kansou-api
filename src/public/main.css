@@ -1,7 +1,38 @@
 @charset "utf-8";
-/* font-family: 'Roboto', sans-serif; */
 
-h1 {
+*, ::after, ::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
     font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
 
+h2 {
+    font-weight: 300;
+}
+
+.content {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-icon {
+    width: 100%;
+    text-align: center;
+}
+
+.hero-icon img {
+    width: 360px;
+    height: 360px;
+}
+
+.description {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 200;
 }

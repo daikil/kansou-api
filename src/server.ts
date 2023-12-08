@@ -23,19 +23,19 @@ app.use((error: Error, request: Request, response: Response, next: NextFunction)
 });
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
-app.listen(3000, () => {
-    console.log("start listening");
-});
+// app.listen(3000, () => {
+//     console.log("start listening");
+// });
 
-// mongodb.connect()
-//     .then(() => {
-//         // MongoDBに接続成功したらサーバーを起動
-//         app.listen(3000, () => {
-//             console.log("start listening");
-//         });
-//     })
-//     .catch((error) => {
-//          // エラーが発生した場合はログを出力してプロセスを終了
-//         console.error(error);
-//         process.exit(1);
-//     })
+mongodb.connect()
+    .then(() => {
+        // MongoDBに接続成功したらサーバーを起動
+        app.listen(3000, () => {
+            console.log("start listening");
+        });
+    })
+    .catch((error) => {
+         // エラーが発生した場合はログを出力してプロセスを終了
+        console.error(error);
+        process.exit(1);
+    })
