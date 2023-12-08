@@ -5,8 +5,14 @@ import path from 'path';
 
 const app = express();
 
+app.use((error: Error, request: Request, response: Response, next: NextFunction): void => {
+    response.status(500).send("Internal server error");
+});
+app.use('/static', express.static(path.join(__dirname, 'public')));
+
+
 app.get('/', (request: Request, response: Response) => {
-    response.sendFile(__dirname + '/views/index.html');
+    response.sendFile(__dirname + '/public/index.html');
 });
 
 app.get('/kansou', async (request: Request, response: Response) => {
@@ -18,24 +24,19 @@ app.get('/kansou', async (request: Request, response: Response) => {
     }
 });
 
-app.use((error: Error, request: Request, response: Response, next: NextFunction): void => {
-    response.status(500).send("Internal server error");
+app.listen(3000, () => {
+    console.log("start listening");
 });
-app.use('/static', express.static(path.join(__dirname, 'public')));
 
-// app.listen(3000, () => {
-//     console.log("start listening");
-// });
-
-mongodb.connect()
-    .then(() => {
-        // MongoDBに接続成功したらサーバーを起動
-        app.listen(3000, () => {
-            console.log("start listening");
-        });
-    })
-    .catch((error) => {
-         // エラーが発生した場合はログを出力してプロセスを終了
-        console.error(error);
-        process.exit(1);
-    })
+// mongodb.connect()
+//     .then(() => {
+//         // MongoDBに接続成功したらサーバーを起動
+//         app.listen(3000, () => {
+//             console.log("start listening");
+//         });
+//     })
+//     .catch((error) => {
+//          // エラーが発生した場合はログを出力してプロセスを終了
+//         console.error(error);
+//         process.exit(1);
+//     })
