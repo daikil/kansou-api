@@ -10,10 +10,13 @@ body {
     width: 100vw;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    padding-top: 4vh;
 }
 
 h2 {
     font-weight: 300;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
 }
 
 .content {
@@ -28,11 +31,52 @@ h2 {
 }
 
 .hero-icon img {
-    width: 360px;
-    height: 360px;
+    width: 72%;
+    max-width: 320px;
+    object-fit: cover;
 }
 
-.description {
+.discription {
+    padding: 1em 0;
+}
+
+.discription p {
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 200;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+.usage {
+    width: 100%;
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0e0e091;
+    border-radius: 0.5em;
+}
+
+.url {
+    font-size: 1.2em;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: none;
+    border-radius: 50%;
+    background-color: #c0c0c0;
+}
+
+.button:hover {
+    border: 1px solid #c0c0c0;
+    background-color: rgba(255, 255, 255, 0.692)0c0;
+}
+
+.button:hover path {
+    fill: #c0c0c0;
 }
