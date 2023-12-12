@@ -2,9 +2,9 @@
   "name": "kansou-api",
   "version": "1.0.0",
   "description": "感想文を返すapi",
-  "main": "server.js",
+  "main": "./dist/server.js",
   "scripts": {
-    "start": "ts-node-dev src/server.ts",
+    "start": "node ./dist/server.ts",
     "local-start": "env-cmd -f .env npm run start"
   },
   "keywords": [],
