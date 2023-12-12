@@ -1,21 +1,27 @@
 window.addEventListener("DOMContentLoaded", (): void => {
-    const copyButton = document.querySelector("button");
-    const urlText = document.querySelector(".url")?.textContent;
+    const copyButton = document.querySelectorAll("button");
+    const urlTexts = document.querySelectorAll(".url");
     const svgIcon = document.querySelector("svg");
+    console.log(copyButton);
+    
+    for(const button of copyButton) {
+        button.addEventListener("click", (): void => {
+            if(!svgIcon) throw new Error("No svg icon");
 
-    copyButton?.addEventListener("click", (): void => {
-        if(!svgIcon) throw new Error("No svg icon");
-        if(!urlText){
-            copyButton.textContent = "Error";
-        } else {
-            navigator.clipboard.writeText(urlText);
-            copyButton.removeChild(svgIcon);
-            copyButton.textContent = "Copied !";
-        }
-
-        setTimeout((): void => {
-            copyButton.textContent = "";
-            copyButton.appendChild(svgIcon);
-        }, 2000);
-    })
-})
+            const index: number = Number(button.id);
+            const urlText: string | null = urlTexts[index - 1].textContent;
+            if(!urlText){
+                button.textContent = "Error";
+            } else {
+                navigator.clipboard.writeText(urlText);
+                button.removeChild(svgIcon);
+                button.textContent = "Copied !";
+            }
+    
+            setTimeout((): void => {
+                button.textContent = "";
+                button.appendChild(svgIcon);
+            }, 2000);
+        })
+    }
+});

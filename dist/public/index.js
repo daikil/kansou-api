@@ -1,23 +1,28 @@
 "use strict";
 window.addEventListener("DOMContentLoaded", () => {
-    const copyButton = document.querySelector("button");
-    const urlText = document.querySelector(".url")?.textContent;
+    const copyButton = document.querySelectorAll("button");
+    const urlTexts = document.querySelectorAll(".url");
     const svgIcon = document.querySelector("svg");
-    copyButton?.addEventListener("click", () => {
-        if (!svgIcon)
-            throw new Error("No svg icon");
-        if (!urlText) {
-            copyButton.textContent = "Error";
-        }
-        else {
-            navigator.clipboard.writeText(urlText);
-            copyButton.removeChild(svgIcon);
-            copyButton.textContent = "Copied !";
-        }
-        setTimeout(() => {
-            copyButton.textContent = "";
-            copyButton.appendChild(svgIcon);
-        }, 2000);
-    });
+    console.log(copyButton);
+    for (const button of copyButton) {
+        button.addEventListener("click", () => {
+            if (!svgIcon)
+                throw new Error("No svg icon");
+            const index = Number(button.id);
+            const urlText = urlTexts[index - 1].textContent;
+            if (!urlText) {
+                button.textContent = "Error";
+            }
+            else {
+                navigator.clipboard.writeText(urlText);
+                button.removeChild(svgIcon);
+                button.textContent = "Copied !";
+            }
+            setTimeout(() => {
+                button.textContent = "";
+                button.appendChild(svgIcon);
+            }, 2000);
+        });
+    }
 });
 //# sourceMappingURL=index.js.map
