@@ -13,6 +13,6 @@
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
   },
   "include": ["src/**/*"],
-  "exclude": ["dist", "node_modules"],
+  "exclude": ["src/dist", "node_modules"],
   "compileOnSave": false
 }
