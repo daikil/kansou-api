@@ -4,7 +4,7 @@
   "description": "感想文を返すapi",
   "main": "./dist/server.js",
   "scripts": {
-    "start": "node ./dist/server.ts",
+    "start": "node ./dist/server.js",
     "local-start": "env-cmd -f .env npm run start"
   },
   "keywords": [],
