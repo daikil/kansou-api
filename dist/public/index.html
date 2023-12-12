@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KansouAPI</title>
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="content">
+        <div class="hero-icon"><img src="/static/hero-icon.png" alt="hero-icon"></div>
+        <div class="discription">
+            <p>さまざまな状況に適用できそうな感想文を返すAPI。</p>
+        </div>
+        <h2>Usage</h2>
+        <div class="usage">
+            <div class="discription">
+                <p>ランダムに1個の感想文を取得する。</p>
+            </div>
+            <div class="usage-code">
+                <p class="url">http://localhost:3000/kansou</p>
+                <button class="button" aria-label="copy">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="#ffffff" d="M16.5 21v1.9c0 .6-.5 1.1-1.1 1.1H2.6c-.6 0-1.1-.5-1.1-1.1V5.6c0-.6.5-1.1 1.1-1.1H6v13.9C6 19.8 7.2 21 8.6 21h7.9zm0-16.1V0H8.6C8 0 7.5.5 7.5 1.1v17.2c0 .6.5 1.1 1.1 1.1h12.8c.6 0 1.1-.5 1.1-1.1V6h-4.9c-.6 0-1.1-.5-1.1-1.1zm5.7-1.5L19.1.3c-.2-.2-.5-.3-.8-.3H18v4.5h4.5v-.3c0-.3-.1-.6-.3-.8z"/>
+                    </svg>
+                </button>    
+            </div>
+            <div class="example">
+                <h3>Response</h2>
+                <div class="response-json">
+                    <p class="json">
+                        {"id": 21, "text": "新しいことをたくさん学びました。感謝しています。"}
+                    </p>
+                </div>
+            </div>
+            <div class="discription">
+                <p>idを指定して感想文を取得する。(1-100)</p>
+            </div>
+            <div class="usage-code">
+                <p class="url">http://localhost:3000/kansou/30</p>
+                <button class="button" aria-label="copy">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="#ffffff" d="M16.5 21v1.9c0 .6-.5 1.1-1.1 1.1H2.6c-.6 0-1.1-.5-1.1-1.1V5.6c0-.6.5-1.1 1.1-1.1H6v13.9C6 19.8 7.2 21 8.6 21h7.9zm0-16.1V0H8.6C8 0 7.5.5 7.5 1.1v17.2c0 .6.5 1.1 1.1 1.1h12.8c.6 0 1.1-.5 1.1-1.1V6h-4.9c-.6 0-1.1-.5-1.1-1.1zm5.7-1.5L19.1.3c-.2-.2-.5-.3-.8-.3H18v4.5h4.5v-.3c0-.3-.1-.6-.3-.8z"/>
+                    </svg>
+                </button>    
+            </div>
+            <div class="example">
+                <h3>Response</h2>
+                <div class="response-json">
+                    <p class="json">
+                        {"id": 30, "text": "思い出深い体験でした。また挑戦したいです。"}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="/static/index.js"></script>
+
+</body>
+</html>

@@ -2,7 +2,7 @@
   "name": "kansou-api",
   "version": "1.0.2",
   "description": "感想文を返すapi",
-  "main": "server.js",
+  "main": "./dist/server.js",
   "scripts": {
     "start": "node ./dist/server.js",
     "local-start": "env-cmd -f .env ts-node-dev src/server.ts"
