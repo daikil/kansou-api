@@ -1,14 +1,15 @@
-import * as mongodb from '../lib/mongodb';
+import {getCollection} from '../lib/mongodb';
 
-type kansouType = {
+type KansouType = {
     id: number;
     text: string;
 };
 
-export const getKansou = async (): Promise<kansouType | null> => {
-    const kansouCollection = mongodb.getCollection();
-    const key = Math.floor(Math.random() * 100);
+export const getKansou = async (id?: number): Promise<KansouType | null> => {
+    const kansouCollection = getCollection();
+    const key = id ? (id) : Math.floor(Math.random() * 20);
     const kansou = await kansouCollection.findOne({id: key});
+    const responseJson: KansouType = !kansou ? {id: 999, text: ""} : {id: kansou.id, text: kansou.text};
 
-    return kansou ? {id : kansou.id, text: kansou.text} : null;
+    return responseJson;
 };
