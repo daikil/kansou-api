@@ -13,10 +13,9 @@ body {
     padding-top: 4vh;
 }
 
-h2 {
+h2, h3 {
     font-weight: 300;
     font-size: 1.5em;
-    margin-bottom: 0.5em;
 }
 
 .content {
@@ -46,10 +45,11 @@ h2 {
     font-size: 1em;
 }
 
-.usage {
+.usage-code {
     width: 100%;
     display: flex;
     padding: 1em;
+    margin: 0 0 1em 0;
     justify-content: space-between;
     align-items: center;
     background-color: #e0e0e091;
@@ -79,4 +79,15 @@ h2 {
 
 .button:hover path {
     fill: #c0c0c0;
+}
+
+.response-json {
+    width: 100%;
+    display: flex;
+    padding: 1em;
+    margin-top: 1em;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0e0e091;
+    border-radius: 0.5em;
 }
