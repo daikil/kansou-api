@@ -10,7 +10,6 @@ app.use((error: Error, request: Request, response: Response, next: NextFunction)
 });
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
-
 app.get('/', (request: Request, response: Response) => {
     response.sendFile(__dirname + '/public/index.html');
 });
@@ -37,7 +36,7 @@ app.get('/kansou/:id', async (request: Request, response: Response) => {
 mongodb.connect()
     .then(() => {
         // MongoDBに接続成功したらサーバーを起動
-        app.listen(3000, () => {
+        app.listen(process.env.PORT, () => {
             console.log("start listening");
         });
     })
