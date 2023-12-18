@@ -5,7 +5,7 @@ let client: MongoClient | null = null;
 
 const connect = async (): Promise<MongoClient> => {
     if(!mongodbConfig){
-        console.error("環境変数SECRET_KEYが設定されていません！");
+        console.error("環境変数DB_KEYが設定されていません！");
         process.exit(); // サーバーとめる
     }
     client = new MongoClient(mongodbConfig);
